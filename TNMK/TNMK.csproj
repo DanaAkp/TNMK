@@ -35,9 +35,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="KMZI_lib">
-      <HintPath>..\..\КМЗИ\KMZI_lib\KMZI_lib\bin\Debug\KMZI_lib.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
@@ -61,6 +58,10 @@
     <Compile Include="ComparisonSolution.xaml.cs">
       <DependentUpon>ComparisonSolution.xaml</DependentUpon>
     </Compile>
+    <Compile Include="JacobiSymbol.xaml.cs">
+      <DependentUpon>JacobiSymbol.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="KMZI.cs" />
     <Compile Include="SimplicityTest.xaml.cs">
       <DependentUpon>SimplicityTest.xaml</DependentUpon>
     </Compile>
@@ -73,6 +74,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="GKO.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="JacobiSymbol.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

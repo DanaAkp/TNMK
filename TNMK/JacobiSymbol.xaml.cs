@@ -15,11 +15,11 @@ using System.Windows.Shapes;
 namespace TNMK
 {
     /// <summary>
-    /// Логика взаимодействия для GKO.xaml
+    /// Логика взаимодействия для JacobiSymbol.xaml
     /// </summary>
-    public partial class GKO : Window
+    public partial class JacobiSymbol : Window
     {
-        public GKO()
+        public JacobiSymbol()
         {
             InitializeComponent();
         }
