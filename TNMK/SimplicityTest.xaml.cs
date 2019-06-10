@@ -23,5 +23,74 @@ namespace TNMK
         {
             InitializeComponent();
         }
+        private void Test1(long n, int K)
+        {
+            string s = "";
+            for (int i = 2; i < K + 2; i++)
+            {
+                if (KMZI.NOD(i, n) != 1)
+                {
+                    s = n.ToString() + " - составное!\n";
+                   s += n.ToString() + " = " + i.ToString() + " * " + n / i;
+                    return;
+                }
+                long d = KMZI.Exponentiation(i, n - 1, n);
+                if (d != 1)
+                {
+                    s = n.ToString() + " - составное!\n";
+                    s += i.ToString() + "^" + (n - 1).ToString() + " = " + d.ToString() + "(mod " + n.ToString() + ")";
+                    return;
+                }
+            }
+            s = n.ToString() + " - возможно простое";
+        }
+        private void Test2(long n, int K)
+        {
+            string s = "";
+            for (int i = 2; i < K + 2; i++)
+            {
+                if (KMZI.NOD(i, n) != 1)
+                {
+                    s = n.ToString() + " - составное!\n";
+                    s += n.ToString() + " = " + i.ToString() + " * " + n / i;
+                    return;
+                }
+                long d = KMZI.Lezhandr(i, n);
+                if (d < 0) d += n;
+                if (d != KMZI.Exponentiation(i, (n - 1) / 2, n))
+                {
+                    s = n.ToString() + " - составное!\n";
+                    s += "SL( " + i.ToString() + "," + n.ToString() + ") = " + d.ToString() + "(mod " + n.ToString() + ")\n";
+                    return;
+                }
+            }
+            s = n.ToString() + " - возможно простое";
+        }
+        private void Test3(long n, int K)
+        {
+            string str = "";
+            for (int i = 2; i < K + 2; i++)
+            {
+                if (KMZI.NOD(i, n) != 1)
+                {
+                    str = n.ToString() + " - составное!\n";
+                    str += n.ToString() + " = " + i.ToString() + " * " + n / i;
+                    return;
+                }
+                int s = 1;
+                long t = (n - 1) / (int)Math.Pow(2, s);
+                long d = KMZI.Exponentiation(i, t, n);
+                while ((int)Math.Pow(2, s) > ((n - 1) / 3) + 1)
+                {
+                    if (KMZI.Exponentiation(d, (long)Math.Pow(2, s), n) == n - 1)
+                    {
+                       str = n.ToString() + " - составное!\n";
+                        return;
+                    }
+                    s++;
+                }
+            }
+            str = n.ToString() + " - возможно простое";
+        }
     }
 }

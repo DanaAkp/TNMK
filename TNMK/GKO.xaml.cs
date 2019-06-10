@@ -23,5 +23,13 @@ namespace TNMK
         {
             InitializeComponent();
         }
+        private void GGKO()
+        {
+
+        }
+        private void SignNumber()
+        {
+
+        }
     }
 }
